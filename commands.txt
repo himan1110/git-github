@@ -1,0 +1,237 @@
+
+Kiran@kiran MINGW64 /c/himan
+$ git init
+Initialized empty Git repository in C:/himan/.git/
+
+Kiran@kiran MINGW64 /c/himan (master)
+$ git remote add origin "https://github.com/himan1110/git-github.git"
+
+Kiran@kiran MINGW64 /c/himan (master)
+$ git pull origin master
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/himan1110/git-github
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> origin/master
+
+Kiran@kiran MINGW64 /c/himan (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        shubh.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Kiran@kiran MINGW64 /c/himan (master)
+$ git add shubh.txt
+
+Kiran@kiran MINGW64 /c/himan (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   shubh.txt
+
+
+Kiran@kiran MINGW64 /c/himan (master)
+$ git commit -m "first commit in local repo"
+[master 97130db] first commit in local repo
+ 1 file changed, 1 insertion(+)
+ create mode 100644 shubh.txt
+
+Kiran@kiran MINGW64 /c/himan (master)
+$ git log
+commit 97130db7170584b2c2e1fd6ea6433ad274e0ec07 (HEAD -> master)
+Author: kiran7306 <50979249+kiran7306@users.noreply.github.com>
+Date:   Tue Jul 9 07:19:30 2019 +0530
+
+    first commit in local repo
+
+commit ee074a98d18af35c1258e9d29cfdbf6058b2c292 (origin/master)
+Author: himan1110 <48972322+himan1110@users.noreply.github.com>
+Date:   Mon Jul 8 19:48:53 2019 +0530
+
+    Initial commit
+
+Kiran@kiran MINGW64 /c/himan (master)
+$ git branch firstbranch
+
+Kiran@kiran MINGW64 /c/himan (master)
+$ git checkout firstbranch
+Switched to branch 'firstbranch'
+
+Kiran@kiran MINGW64 /c/himan (firstbranch)
+$ git add firstbranch
+fatal: pathspec 'firstbranch' did not match any files
+
+Kiran@kiran MINGW64 /c/himan (firstbranch)
+$ git add firstbranch.txt
+
+Kiran@kiran MINGW64 /c/himan (firstbranch)
+$ git commit -m "making changes in first branch"
+[firstbranch 383649a] making changes in first branch
+ 1 file changed, 1 insertion(+)
+ create mode 100644 firstbranch.txt
+
+Kiran@kiran MINGW64 /c/himan (firstbranch)
+$ ls
+firstbranch.txt  README.md  shubh.txt
+
+Kiran@kiran MINGW64 /c/himan (firstbranch)
+$ git checkout master
+Switched to branch 'master'
+
+Kiran@kiran MINGW64 /c/himan (master)
+$ ls
+README.md  shubh.txt
+
+Kiran@kiran MINGW64 /c/himan (master)
+$ git merge firstbranch
+Updating 97130db..383649a
+Fast-forward
+ firstbranch.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 firstbranch.txt
+
+Kiran@kiran MINGW64 /c/himan (master)
+$ ls
+firstbranch.txt  README.md  shubh.txt
+
+Kiran@kiran MINGW64 /c/himan (master)
+$ ls
+firstbranch.txt  README.md  shubh.txt
+
+Kiran@kiran MINGW64 /c/himan (master)
+$ git commit -a -m "first branch modification"
+[master 506b1a2] first branch modification
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Kiran@kiran MINGW64 /c/himan (master)
+$ cat firstbranch.txt
+first file (modified)
+Kiran@kiran MINGW64 /c/himan (master)
+$ git checkout master
+Already on 'master'
+
+Kiran@kiran MINGW64 /c/himan (master)
+$ ls
+firstbranch.txt  README.md  shubh.txt
+
+Kiran@kiran MINGW64 /c/himan (master)
+$ git checkout firstbranch
+Switched to branch 'firstbranch'
+
+Kiran@kiran MINGW64 /c/himan (firstbranch)
+$ git add -A
+
+Kiran@kiran MINGW64 /c/himan (firstbranch)
+$ git commit -a -m "add for rebasing"
+[firstbranch 7c44e05] add for rebasing
+ 2 files changed, 2 insertions(+)
+ create mode 100644 file2.txt
+ create mode 100644 file3.txt
+
+Kiran@kiran MINGW64 /c/himan (firstbranch)
+$ ls
+file2.txt  file3.txt  firstbranch.txt  README.md  shubh.txt
+
+Kiran@kiran MINGW64 /c/himan (firstbranch)
+$ git checkout master
+Switched to branch 'master'
+
+Kiran@kiran MINGW64 /c/himan (master)
+$ ls
+firstbranch.txt  README.md  shubh.txt
+
+Kiran@kiran MINGW64 /c/himan (master)
+$ git rebase firstbranch
+First, rewinding head to replay your work on top of it...
+Applying: first branch modification
+
+Kiran@kiran MINGW64 /c/himan (master)
+$ ls
+file2.txt  file3.txt  firstbranch.txt  README.md  shubh.txt
+
+Kiran@kiran MINGW64 /c/himan (master)
+$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/Kiran/.ssh/id_rsa):
+Created directory '/c/Users/Kiran/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/Kiran/.ssh/id_rsa.
+Your public key has been saved in /c/Users/Kiran/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:EMEqf2oj3V/21RBMtGqM6bTOyQJCFE9jvhyB8lo+ucQ Kiran@kiran
+The key's randomart image is:
++---[RSA 3072]----+
+|    .+B.     .o  |
+|  . o=.+     o . |
+|   + .=       +  |
+|  . =. +   + . . |
+|   O .o S + + .  |
+|  . E o  o o   o |
+|   o B .  =   . .|
+|  . * . .* o .   |
+|   o . ...= .    |
++----[SHA256]-----+
+
+Kiran@kiran MINGW64 /c/himan (master)
+$ cat /c/Users/Kiran/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC6Fs3KER8UmzduT/x3w0IyBZrufSrZpMFBXaZrh8BZYUBJVcTWf2du26+J/P5H0KKonJ5uuycJBSefJstwgl+NvkntJPGRBkvxuqFxgsAkr0+dwkyxrskWj8r5M9jzCZ/zmD8QLizxqTso0uPCm+UPkzoPMesnsjOkWGoNSc9RYkIDv5U9x+6IB7mwI76GpMnmgHsesrnvWJN2oonBkco5F8elcVtOxXApbsQ1dicUDIV7bvEKbwFSddqUBDjLYgWRyF1LD95C/5gF69nuIB34OaBZj7BKm1qaul2ATOq9cBjAhPJhy8W1I6F07tqfrwFfyS8T/I4npH9etWJDuocDHJxtixTqIv4wL158FCUKdBZb9UFVExwFBzkkFVufhvpVLd3ufLhdG6PDdowoPvk7DbehfcSLeisWQyE+BTEttyPsG6UwS2Gpe6u357cXccq8SeYUxDspoQrkJBcLTsTDOtIYCnPJCf1HvXV/H5rN8BVwU4HR0XsrKyvAnBPNMxs= Kiran@kiran
+
+Kiran@kiran MINGW64 /c/himan (master)
+$ ssh -T git@github.com
+The authenticity of host 'github.com (13.234.176.102)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com,13.234.176.102' (RSA) to the list of known hosts.
+Hi himan1110! You've successfully authenticated, but GitHub does not provide shell access.
+
+Kiran@kiran MINGW64 /c/himan (master)
+$ ssh -T git@github.com
+Hi himan1110! You've successfully authenticated, but GitHub does not provide shell access.
+
+Kiran@kiran MINGW64 /c/himan (master)
+$ git checkout firstbranch
+Switched to branch 'firstbranch'
+
+Kiran@kiran MINGW64 /c/himan (firstbranch)
+$ git push origin firstbranch
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (9/9), 797 bytes | 132.00 KiB/s, done.
+Total 9 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), done.
+remote:
+remote: Create a pull request for 'firstbranch' on GitHub by visiting:
+remote:      https://github.com/himan1110/git-github/pull/new/firstbranch
+remote:
+To https://github.com/himan1110/git-github.git
+ * [new branch]      firstbranch -> firstbranch
+
+Kiran@kiran MINGW64 /c/himan (firstbranch)
+$ git checkout master
+Switched to branch 'master'
+
+Kiran@kiran MINGW64 /c/himan (master)
+$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 307 bytes | 102.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/himan1110/git-github.git
+   ee074a9..2344979  master -> master
+
+Kiran@kiran MINGW64 /c/himan (master)
+$

@@ -1,0 +1,340 @@
+in this video I will show you how to use
+
+Windows Server 2016 to deploy roaming
+
+users profiles to Windows client
+
+computers if your enrollment is not
+
+already set up with 
+roaming user
+
+preference the first step is to create
+
+security group that contains all the
+
+users to which you want to apply a
+
+roaming user profile settings so let's
+
+open 
+active refuses and computers
+
+concern and here you can see we have a
+
+one oh you name we one and under you one
+
+I have a total 5 test users that is
+
+stage choose a 
+one - please choose a
+
+file and we have a one group name Group
+
+1 all five users are member of our group
+
+Group one so we have a one security
+
+group name Group one 
+and we will use
+
+this group close and permission on the
+
+share folder
+
+so before we configure a roaming profile
+
+settings for user account we need to
+
+create a share
+ folder so let's open this
+
+PC and last back on DJ let's create one
+
+folder named profile let's share this
+
+folder by right-clicking on it and
+
+select properties click 
+on sharing tab
+
+click on advanced sharing select share
+
+this folder and the share name will be
+
+profile but you want to create the share
+
+as a hidden shape that I am going
+ to put
+
+dollar sign at the end of the share name
+
+now let's click on the permissions as
+
+you can see everyone have default to
+
+read only for me sure let's give them a
+
+full
+ control let's click on apply the
+
+one ok again click on apply and ok now
+
+we need to set up and if his commission
+
+as well so let's click on security tab
+
+click on advanced
+ now first of all I'm
+
+going to disable inheritance select
+
+convert inheritor Commission into
+
+expedition permission on this object and
+
+that's remove both user century
+ because
+
+by default every user from our domain if
+
+a member of my lap slash uses group and
+
+we don't want that user have a certain
+
+permission on this share folder as 
+we
+
+continue now let's click on Add button
+
+click on select a principal and here we
+
+have to specify the name of our group
+
+that is group 1 to construct me to
+
+verify that
+ group ok
+
+that's become okay now permission will
+
+be allowed but that permission only
+
+applies to this folder only now let's
+
+click on show advanced permission and
+
+select
+ create files and write data and
+
+create food is in obtain get a
+
+permission as well thus we going to a
+
+stick on apply and okay now our share
+
+folder is ready to use the
+ Indus click
+
+on sharing tab copy the network path and
+
+click on loose now one next step is to
+
+configure domain users profile settings
+
+let's move back to add projectory
+ users
+
+in computers consume and select our user
+
+just choose a one practically and select
+
+properties you can also select multiple
+
+users by pressing ctrl key and select
+ing
+
+users this will enables you to configure
+
+roaming user profile for multiple users
+
+in single session we will see it later
+
+let's click on profile now let's place
+
+the
+ chef who dispatch and type slash now
+
+here you can specify it or santal you
+
+use need percentile variable let's click
+
+on apply that will automatically
+
+populate it uses 
+login name and that is
+
+user 1 in our case as we can ok so now
+
+we have a successfully configured for
+
+roaming user profile settings for our
+
+tea stuserone let's select
+ all remaining
+
+user pleas to the to two teas to s5
+
+right click on it and select properties
+
+let's click on profile tab select
+
+profile path and let's change the
+ path
+
+type /host username person I'm asking on
+
+apply and click on OK now if you see it
+
+is choosers property click on profile
+
+tab and the name is user do we can
+
+verify
+ same for these two so 3 as well
+
+Asli come okay so now we have
+
+successfully configured the roaming is
+
+using preferred settings for our test
+
+users so next time when 
+they use a way
+
+log on to domain his profile will be
+
+saved in a subfolder
+
+which will be created under profiles
+
+shared folder the name of the subfolder
+
+will be the name 
+of the user for whom
+
+your roaming profile is configured if we
+
+check it under profile folders right now
+
+we do not have any folder so let's paste
+
+roaming user profile 
+settings for our
+
+Active Directory user so this is the our
+
+Windows 10 client computer and this
+
+computer is a part of our activity to
+
+mean to taste roaming user profiles
+ we
+
+can sign into this Windows 10 computer
+
+using the user account on which we have
+
+configured room user profile settings
+
+let's use our user 1 screen ischial and
+
+we'll
+ ask for the password and hit enter
+
+ok let's create one for do not extra
+
+that's create one shortcut for seeing
+
+the office now after creating person
+
+folder let's log off 
+from client
+
+computer now user profiles will be saved
+
+back in the share folder which we
+
+configure for roaming user profile let's
+
+move back to our server and here you 
+can
+
+see we have a 1 folder named user 1 dot
+
+avi file leaf I stand for this user
+
+profile is created on Windows 10
+
+computer and that's why that is the
+
+version number we
+ five slaps open this
+
+folder now as you can see add researcher
+
+is not able to access the folder because
+
+of NTFS permission let's click on the
+
+continue and here we go 
+you have been
+
+denied permission to access this folder
+
+click on close so admitted is not able
+
+to access users profile folder now let's
+
+move back to evolving those
+ client
+
+computer
+
+and let's again log in as a kiss to the
+
+one now to verify use swimming profile
+
+let's open system properties thus click
+
+on advanced system settings but 
+as you
+
+know standard user does not have
+
+permission to view advanced system
+
+settings but for this demonstration I'm
+
+going to use the credential of our
+
+domain administrator
+ click on yes on the
+
+user profiles click on settings and here
+
+you can see my lap / user one has a
+
+roaming profile type so from this we can
+
+confirm that we have 
+successfully
+
+configured the roaming profile for our
+
+use of one and that's it for this video
+
+demonstration thank you for watching
+
+this video
+
